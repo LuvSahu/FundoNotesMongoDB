@@ -7,9 +7,9 @@ namespace BusinessLayer.Interface
 {
     public interface ILabelBL
     {
-        public LabelModel AddLabel(LabelModel addlabel);
+        public LabelModel AddLabel(LabelModel addlabel, string userid);
 
-        public LabelModel UpdateLabel(LabelModel editlabel, string id);
+        public LabelModel UpdateLabel(LabelModel editlabel, string id, string userid);
 
         public bool DeleteLabel(string id);
 

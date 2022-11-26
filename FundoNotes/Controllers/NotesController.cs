@@ -238,7 +238,7 @@ namespace FundoNotes.Controllers
             }
         }
 
-        //[Authorize]
+        [Authorize]
         [HttpPut("UploadImage")]
         public IActionResult UploadImage(string id, IFormFile img)
         {
@@ -262,7 +262,7 @@ namespace FundoNotes.Controllers
             }
         }
 
-        //[Authorize]
+        [Authorize]
         [HttpPut("Color")]
         public ActionResult Color(string id, string Color)
         {

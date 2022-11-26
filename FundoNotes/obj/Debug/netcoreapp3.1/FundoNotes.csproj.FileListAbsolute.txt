@@ -68,3 +68,4 @@ D:\CFP BATCH\FundoNotesMongoDB\FundoNotes\FundoNotes\obj\Debug\netcoreapp3.1\Fun
 D:\CFP BATCH\FundoNotesMongoDB\FundoNotes\FundoNotes\obj\Debug\netcoreapp3.1\FundoNotes.dll
 D:\CFP BATCH\FundoNotesMongoDB\FundoNotes\FundoNotes\obj\Debug\netcoreapp3.1\FundoNotes.pdb
 D:\CFP BATCH\FundoNotesMongoDB\FundoNotes\FundoNotes\obj\Debug\netcoreapp3.1\FundoNotes.genruntimeconfig.cache
+D:\CFP BATCH\FundoNotesMongoDB\FundoNotes\FundoNotes\bin\Debug\netcoreapp3.1\libman.json

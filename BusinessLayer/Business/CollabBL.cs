@@ -17,11 +17,11 @@ namespace BusinessLayer.Business
             this.collabRL = collabRL;
         }
 
-        public CollabModel AddCollab(CollabModel addcollab)
+        public CollabModel AddCollab(CollabModel addcollab, string userid)
         {
             try
             {
-                return collabRL.AddCollab(addcollab);
+                return collabRL.AddCollab(addcollab,userid);
             }
             catch (Exception e)
             {

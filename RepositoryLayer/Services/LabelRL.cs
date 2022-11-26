@@ -23,11 +23,11 @@ namespace RepositoryLayer.Services
             Label = database.GetCollection<LabelModel>("Label");
         }
 
-        public LabelModel AddLabel(LabelModel addlabel)
+        public LabelModel AddLabel(LabelModel addlabel, string userid)
         {
             try
             {
-                var ifExists = this.Label.Find(x => x.NotesID == addlabel.NotesID).SingleOrDefault();
+                var ifExists = this.Label.Find(x => x.NotesID == addlabel.NotesID && x.UserID == userid).SingleOrDefault();
                 if (ifExists == null)
                 {
                     this.Label.InsertOne(addlabel);
@@ -47,11 +47,11 @@ namespace RepositoryLayer.Services
             return Label.Find(FilterDefinition<LabelModel>.Empty).ToList();
         }
 
-        public LabelModel UpdateLabel(LabelModel editlabel, string id)
+        public LabelModel UpdateLabel(LabelModel editlabel, string id,string userid)
         {
             try
             {
-                var ifExists = this.Label.Find(x => x.LabelID == id).FirstOrDefault();
+                var ifExists = this.Label.Find(x => x.LabelID == id && x.UserID == userid).FirstOrDefault();
                 if (ifExists != null)
                 {
 

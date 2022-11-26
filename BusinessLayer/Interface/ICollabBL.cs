@@ -7,7 +7,7 @@ namespace BusinessLayer.Interface
 {
     public interface ICollabBL
     {
-        public CollabModel AddCollab(CollabModel addcollab);
+        public CollabModel AddCollab(CollabModel addcollab, string userid);
 
         public bool DeleteCollab(string id);
 

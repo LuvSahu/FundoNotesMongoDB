@@ -29,7 +29,7 @@ namespace FundoNotes.Controllers
             try
             {
                 string userId = User.Claims.FirstOrDefault(e => e.Type == "UserId").Value;
-                var result = this.collabBL.AddCollab(addcollab);
+                var result = this.collabBL.AddCollab(addcollab,userId);
                 if (result != null)
                 {
                     return Ok(new { success = true, message = "Collab Added Successfull", data = result });

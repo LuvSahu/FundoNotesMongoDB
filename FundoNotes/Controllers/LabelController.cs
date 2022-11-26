@@ -29,7 +29,7 @@ namespace FundoNotes.Controllers
             try
             {
                 string userId = User.Claims.FirstOrDefault(e => e.Type == "UserId").Value;
-                var result = this.labelBL.AddLabel(addlabel);
+                var result = this.labelBL.AddLabel(addlabel,userId);
                 if (result != null)
                 {
                     return Ok(new { success = true, message = "Label Added Successfull", data = result });
@@ -53,7 +53,7 @@ namespace FundoNotes.Controllers
             try
             {
                 string userId = User.Claims.FirstOrDefault(e => e.Type == "UserId").Value;
-                var result = labelBL.UpdateLabel(editlabel, id);
+                var result = labelBL.UpdateLabel(editlabel, id,userId);
                 if (result != null)
                 {
                     return Ok(new { success = true, message = "Label Update Successfull", data = result });

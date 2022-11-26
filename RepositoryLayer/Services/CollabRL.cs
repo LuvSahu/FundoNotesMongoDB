@@ -23,11 +23,11 @@ namespace RepositoryLayer.Services
             Collab = database.GetCollection<CollabModel>("Collab");
         }
 
-        public CollabModel AddCollab(CollabModel addcollab)
+        public CollabModel AddCollab(CollabModel addcollab, string userid)
         {
             try
             {
-                var ifExists = this.Collab.Find(x => x.CollabID == addcollab.CollabID).SingleOrDefault();
+                var ifExists = this.Collab.Find(x => x.CollabID == addcollab.CollabID && x.UserID == userid).SingleOrDefault();
                 if (ifExists == null)
                 {
                     this.Collab.InsertOne(addcollab);

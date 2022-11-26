@@ -129,10 +129,14 @@ namespace RepositoryLayer.Services
             {
                 if (password.Equals(confirmPassword))
                 {
-                    var EmailCheck = this.User.AsQueryable().Where(x => x.Email == Email).SingleOrDefault();
-                    EmailCheck.Password = password;
-
-                    //User.SaveChanges();
+                    var EmailCheck = this.User.Find(x => x.Email == Email).SingleOrDefault();
+                    //return true;
+                    if (EmailCheck != null)
+                    {
+                        EmailCheck.Password = password;
+                        this.User.UpdateOne(x => x.Email == Email, Builders<UserRegisterModel>.Update.Set(x => x.Password, password));
+                        return true;
+                    }
                     return true;
 
                 }

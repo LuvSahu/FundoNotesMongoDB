@@ -14,11 +14,11 @@ namespace BusinessLayer.Business
         {
             this.labelRL = labelRL;
         }
-        public LabelModel AddLabel(LabelModel addlabel)
+        public LabelModel AddLabel(LabelModel addlabel, string userid)
         {
             try
             {
-                return labelRL.AddLabel(addlabel);
+                return labelRL.AddLabel(addlabel,userid);
             }
             catch (Exception e)
             {
@@ -26,11 +26,11 @@ namespace BusinessLayer.Business
             }
         }
 
-        public LabelModel UpdateLabel(LabelModel editlabel, string id)
+        public LabelModel UpdateLabel(LabelModel editlabel, string id, string userid)
         {
             try
             {
-                return this.labelRL.UpdateLabel(editlabel, id);
+                return this.labelRL.UpdateLabel(editlabel, id,userid);
             }
             catch (Exception e)
             {
